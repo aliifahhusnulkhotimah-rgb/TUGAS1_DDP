@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Aliifah Profile{% endblock %}
+
+{% block content %}
+<div id="home" class="content-section active">
+    <h4 class="border-bottom pb-2 mb-3 text-primary">Dashboard Overview</h4>
+    
+    <div class="alert alert-success shadow-sm border-0">
+        <h5 class="alert-heading"><i class="fas fa-check-circle me-2"></i>Selamat Datang, Aliifah!</h5>
+        <p class="mb-0 small">Ini adalah halaman Home yang menggunakan template inheritance Django.</p>
+    </div>
+    
+    <div class="row g-3 mt-2">
+        <div class="col-md-6">
+            <div class="card bg-primary text-white p-3 h-100 border-0 shadow-sm">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="mb-0">Total Projects</h6>
+                        <h2 class="mb-0 fw-bold">12</h2>
+                    </div>
+                    <i class="fas fa-project-diagram fa-2x opacity-50"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card bg-success text-white p-3 h-100 border-0 shadow-sm">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="mb-0">Active Status</h6>
+                        <h2 class="mb-0 fw-bold">Online</h2>
+                    </div>
+                    <i class="fas fa-wifi fa-2x opacity-50"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="mt-4 text-muted">
+        Sebagai seorang pembelajar growth mindset, dashboard ini merepresentasikan progress saya.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
+</div>
+{% endblock %}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Profile Mahasiswa{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #18bc9c;
+        }
+
+        /* LOGIKA APP-SHELL (NO SCROLL DI BODY) */
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden; 
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* CAROUSEL FIXED HEIGHT */
+        .carousel-item img {
+            height: 25vh;
+            min-height: 150px;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+        
+        /* Agar caption terlihat rapi di tengah */
+        .carousel-caption {
+            bottom: 20%;
+        }
+
+        /* NAVBAR FIXED */
+        .navbar {
+            background-color: var(--primary-color) !important;
+            flex-shrink: 0;
+            z-index: 1000;
+        }
+
+        /* CONTENT WRAPPER */
+        .content-wrapper {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .row-full-height {
+            height: 100%;
+            margin: 0;
+        }
+
+        /* SIDEBAR */
+        .sidebar-col {
+            background-color: white;
+            border-right: 1px solid #ddd;
+            height: 100%;
+            overflow-y: auto;
+        }
+        .sidebar-header {
+            background-color: var(--accent-color);
+            padding: 15px;
+            text-align: center;
+            color: white;
+        }
+        .profile-thumb {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-bottom: 5px;
+        }
+
+        /* MAIN CONTENT AREA */
+        .main-col {
+            height: 100%;
+            overflow-y: auto; /* SCROLL HANYA DI SINI */
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        main {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            min-height: 100%;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            flex-shrink: 0;
+            font-size: 0.8rem;
+        }
+
+        /* Style Link Aktif */
+        .list-group-item.active, .nav-link.active {
+            background-color: #eef2f7 !important;
+            color: var(--primary-color) !important;
+            border-left: 4px solid var(--accent-color);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- HEADER / CAROUSEL -->
+        <div id="headerCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- Indikator Slide (Titik-titik di bawah) -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <!-- Konten Slide -->
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <img src="https://i.pinimg.com/1200x/d3/a5/dd/d3a5dd971525531e98eea818e002c276.jpg" class="d-block w-100" alt="Coding">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Pyhton Programming</h5>
+                        <p>Web Berbasis Pyhton.</p>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80" class="d-block w-100" alt="Teamwork">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Kolaborasi Tim</h5>
+                        <p>Belajar dan tumbuh bersama komunitas.</p>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80" class="d-block w-100" alt="Learning">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Pembelajar Sepanjang Hayat</h5>
+                        <p>Growth mindset dalam setiap langkah.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tombol Navigasi Kiri/Kanan -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#headerCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#headerCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg navbar-dark shadow-sm py-1">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand" href="#"><i class="fas fa-code me-2"></i>MyProfile</a>
+                <button class="navbar-toggler btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto small">
+                        <!-- Perhatikan tag url Django di sini -->
+                        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About Me</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'gallery' %}">Gallery</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- CONTENT LAYOUT -->
+        <div class="content-wrapper">
+            <div class="row row-full-height g-0">
+                
+                <!-- SIDEBAR (STATIS) -->
+                <aside class="col-lg-3 col-md-4 sidebar-col shadow-sm">
+                    <div class="sidebar-header">
+                        <!-- Ganti src gambar sesuai kebutuhan -->
+                        <img src="{% static 'images/me.jpg' %}" alt="Profile" class="profile-thumb shadow-sm">
+                        <h6 class="mt-2 mb-0 fw-bold">Aliifah</h6>
+                        <small class="text-white-50">Mahasiswa Teknik Informatika</small>
+                    </div>
+                    <div class="list-group list-group-flush py-2">
+                        <!-- Menu Navigasi Sidebar -->
+                        <a href="{% url 'home' %}" class="list-group-item list-group-item-action">
+                            <i class="fas fa-home me-2 text-muted"></i> Dashboard
+                        </a>
+                        <a href="{% url 'about' %}" class="list-group-item list-group-item-action">
+                            <i class="fas fa-user-graduate me-2 text-muted"></i> About
+                        </a>
+                        <a href="{% url 'gallery' %}" class="list-group-item list-group-item-action">
+                            <i class="fas fa-images me-2 text-muted"></i> Gallery
+                        </a>
+                    </div>
+                </aside>
+
+                <!-- MAIN CONTENT (DINAMIS) -->
+                <div class="col-lg-9 col-md-8 main-col">
+                    <main>
+                        <!-- Di sinilah konten akan disuntikkan oleh child template -->
+                        {% block content %}
+                        {% endblock %}
+                    </main>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container-fluid">
+                <p class="mb-0">&copy; 2024 Aliifah Profile. Built with Django & Bootstrap 5.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

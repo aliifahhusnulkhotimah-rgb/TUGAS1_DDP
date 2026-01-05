@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}About Me - Aliifah Profile{% endblock %}
+
+{% block content %}
+<div id="about">
+    <h4 class="border-bottom pb-2 mb-3 text-primary">Riwayat & Organisasi</h4>
+    
+    <!-- Tabel Pendidikan -->
+    <div class="card mb-4 border-0 shadow-sm">
+        <div class="card-header bg-white fw-bold">
+            <i class="fas fa-graduation-cap text-warning me-2"></i>Pendidikan
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead class="table-light">
+                        <tr><th>Jenjang</th><th>Institusi</th><th>Tahun</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>SD</td><td>MI ASY-Syuhada </td><td>2014-2019</td></tr>
+                        <tr><td>SMP</td><td>SMPIT Insan Mandiri Parung</td><td>2019-2022</td></tr>
+                        <tr><td>SMA</td><td>SMA Negeri 9 Tambun Selatan</td><td>2022-2025</td></tr>
+                        <tr><td>S1</td><td>STT Terpadu Nurul Fikri</td><td>2025-Kini</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabel Organisasi -->
+    <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white fw-bold">
+            <i class="fas fa-users text-info me-2"></i>Organisasi
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead class="table-light">
+                        <tr><th>Organisasi</th><th>Jabatan</th><th>Periode</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>OSIS</td><td>Kedisiplinan</td><td>2020-2021</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

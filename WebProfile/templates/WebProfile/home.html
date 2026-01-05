@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Aliifah Profile{% endblock %}
+
+{% block content %}
+<div id="home" class="content-section active">
+    <h4 class="border-bottom pb-2 mb-3 text-primary">Dashboard</h4>
+    
+    <div class="alert alert-success shadow-sm border-0">
+        <h5 class="alert-heading"><i class="fas fa-check-circle me-2"></i>Selamat Datang</h5>
+        <p class="mb-0 small">Ini adalah halaman Home yang menggunakan template inheritance Django.</p>
+    </div>
+    
+    <div class="row g-3 mt-2">
+        <div class="col-md-6">
+            <div class="card bg-primary text-white p-3 h-100 border-0 shadow-sm">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="mb-0">Total Projects</h6>
+                        <h2 class="mb-0 fw-bold">5</h2>
+                    </div>
+                    <i class="fas fa-project-diagram fa-2x opacity-50"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card bg-success text-white p-3 h-100 border-0 shadow-sm">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="mb-0">Active Status</h6>
+                        <h2 class="mb-0 fw-bold">Online</h2>
+                    </div>
+                    <i class="fas fa-wifi fa-2x opacity-50"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="mt-4 text-muted">
+        saya adalah seorang mahasiswi teknik Informatika, mahasiswi baru yang sedang beradaptasi dengan lingkungan kampus dan perkuliahan. saya cukup kesulitan beradaptasi dikarenakan perbedaan sistem pembelajaran di kampus dengan di sekolah sebelumnya. namun saya berusaha untuk terus belajar dan beradaptasi dengan lingkungan baru ini. Dan dikarnakan perubahan jurusan yang ingin saya ambil sebelumnya berbeda dengan jurusan yang saya ambil sekarang. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam perferendis repellendus totam id provident? Sunt doloremque dolores velit, impedit consectetur similique alias odio tempore, corrupti voluptates esse quas in ipsam?
+    </p>
+</div>
+{% endblock %}

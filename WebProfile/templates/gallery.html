@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Gallery - Ucen Profile{% endblock %}
+
+{% block content %}
+<div id="gallery">
+    <h4 class="border-bottom pb-2 mb-3 text-primary">Dokumentasi Kegiatan</h4>
+    <div class="row g-3">
+        <!-- Gambar 1 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Activity">
+                <div class="card-body p-2">
+                    <h6 class="card-title mb-1">Bootcamp Coding</h6>
+                    <small class="text-muted">Jakarta, 2023</small>
+                </div>
+            </div>
+        </div>
+        <!-- Gambar 2 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Activity">
+                <div class="card-body p-2">
+                    <h6 class="card-title mb-1">Rapat Tahunan</h6>
+                    <small class="text-muted">Bandung, 2023</small>
+                </div>
+            </div>
+        </div>
+        <!-- Gambar 3 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=500" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Activity">
+                <div class="card-body p-2">
+                    <h6 class="card-title mb-1">Study Tour</h6>
+                    <small class="text-muted">Bali, 2022</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

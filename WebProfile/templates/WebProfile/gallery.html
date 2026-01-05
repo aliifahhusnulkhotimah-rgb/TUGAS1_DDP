@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %} {% block title %}Gallery - Ucen Profile{% endblock %}
+
+{% block content %}
+<div id="gallery">
+    <h4 class="border-bottom pb-2 mb-3 text-primary">Dokumentasi Kegiatan</h4>
+    <div class="row g-3">
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <img src="{% static 'images/ormik.jpeg' %}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Bootcamp Coding">
+                
+                <div class="card-body p-2">
+                    <h6 class="card-title mb-1">Ormik Explore</h6>
+                    <small class="text-muted">Kampus A STT Terpadu Nurul Fikri, 2025</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <img src="{% static 'images/osjur.jpeg' %}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Rapat Tahunan">
+                <div class="card-body p-2">
+                    <h6 class="card-title mb-1">Osjur TI</h6>
+                    <small class="text-muted">Kampus A STT Terpadu Nurul Fikri, 2025</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <img src="{% static 'images/mentoring.jpeg' %}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Study Tour">
+                <div class="card-body p-2">
+                    <h6 class="card-title mb-1">Mentoring BKPK</h6>
+                    <small class="text-muted">Kampus B STT Terpadu Nurul Fikri, 2025</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
